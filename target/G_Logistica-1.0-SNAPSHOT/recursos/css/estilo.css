@@ -1,0 +1,139 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 06/08/2016, 19:17:09
+    Author     : hexp_
+*/
+
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-color: #2196f3;
+    font-family: "Arial", "Verdana", sans-serif;
+  }
+  
+    
+ #cabecalho{
+      margin: auto;
+      width: 100%;
+      height: 15%;
+      background-color: #2196f3;
+  }
+  
+  
+  #menu{
+      margin: auto;
+      width: 100%;
+      height: 6%;
+      background-color:  #42a5f5;
+      text-align: center;
+  }
+  
+  
+  #conteudo{
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      background-color: #e3f2fd;
+  }
+  
+   
+  #titulo{
+      overflow: hidden;
+      width: 13%;
+      height: auto;
+      padding: 1.5%; 
+      margin-top: 10px;
+      margin-left: 10px;
+      border: 3px;
+      border-radius: 15px 30px;
+      border-style: solid;
+      border-color: white;
+      color: #e8eaf6;
+  }
+  
+  #form_cadastro h1{
+      margin: auto;
+      padding: 10px;
+      font-size: 22pt;
+      color: #0d47a1;
+  }
+  
+  #form_cadastro{
+      overflow-wrap: inherit;
+      width: 70%;
+      margin-left: 25%;
+            
+  }
+  
+  input{
+    padding: 3px;
+    margin: 2px;
+  }
+  
+  input[type=text]{
+      width: 70%;
+  }
+  
+   input[type=date]{
+      width: 35%;
+  }
+  
+   select{
+      width: 36.5%;
+      padding: 5px;
+  }
+  
+  input[type=submit]{
+      padding: 10px 30px;
+      background-color: #bbdefb;
+      border: 1px solid #42a5f5;
+      color: #0d47a1;
+      margin-top: 5px;
+  }
+  
+  input[type=submit]:hover{
+      padding: 10px 30px;
+      background-color: #90caf9;
+      border: 1px solid #42a5f5;      
+  }
+  
+  ul li{
+      list-style: none;
+  }
+  
+  #menu ul li{
+      display: inline-block;
+      padding: 10px 20px;
+      margin: auto;
+  }
+  
+  a{
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+  }
+  
+  a:active{
+      color: white;
+      font-weight: bold;
+  }
+  
+  a:before{
+       color: white;
+      font-weight: bold;
+  }
+  
+  a:after{
+       color: white;
+      font-weight: bold;
+  }
+  
+  a:hover{
+      color: whitesmoke;
+      font-weight: bold;
+  }
