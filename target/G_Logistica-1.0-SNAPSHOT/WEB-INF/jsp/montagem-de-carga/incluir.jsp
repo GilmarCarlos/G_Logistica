@@ -64,6 +64,16 @@
                             
                             <!-- incio coluna meio-->
                             <div class="col-lg-6">     
+                            
+                                 <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1">Rota</span>
+                                    <select class="form-control" title="Selecione uma rota" aria-describedby="basic-addon1" name="idTransportador">
+                                        <c:forEach var="t" items="${transportadores}">
+                                            <option value="${t.idTransportador}">${t.descricao}</option>
+                                        </c:forEach>
+                                    </select> 
+                                </div>
+                                
                                 <div class="input-group">
                                     <span class="input-group-addon" id="basic-addon1">Conferente</span>
                                     <input type="text" class="form-control" placeholder="Conferente" aria-describedby="basic-addon1" name="conferente">
@@ -71,10 +81,11 @@
 
                                 <div class="input-group">
                                     <span class="input-group-addon" id="basic-addon1">Cidade/UF</span>
-                                    <input type="text" class="form-control" placeholder="Cidade - UF" aria-describedby="basic-addon1" name="cidadeUf">
+                                    <input list="cidades" class="form-control" placeholder="Cidade - UF" aria-describedby="basic-addon1" name="cidadeUf" onkeypress="AutoComplete(this.value)">
+                                    <div id="id01"></div>    
                                 </div>
 
-                                <div class="input-group">
+                                  <div class="input-group">
                                     <span class="input-group-addon" id="basic-addon1">Cliente</span>
                                     <input type="text" class="form-control" placeholder="Razão Social" aria-describedby="basic-addon1" name="cliente">
                                 </div>
@@ -82,15 +93,6 @@
                                 <div class="input-group">
                                     <span class="input-group-addon" id="basic-addon1">Danfe</span>
                                     <input type="number" class="form-control" min="0" step="1" placeholder="Número NFE" aria-describedby="basic-addon1" name="danfe">
-                                </div>
-
-                                <div class="input-group">
-                                    <span class="input-group-addon" id="basic-addon1">Rota</span>
-                                    <select class="form-control" title="Selecione uma rota" aria-describedby="basic-addon1" name="idTransportador">
-                                        <c:forEach var="t" items="${transportadores}">
-                                            <option value="${t.idTransportador}">${t.descricao}</option>
-                                        </c:forEach>
-                                    </select> 
                                 </div>
                                 
                                 <div class="input-group">

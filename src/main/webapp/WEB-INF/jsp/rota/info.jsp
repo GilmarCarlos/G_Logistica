@@ -58,53 +58,59 @@
                         <!-- inicio coluna esquerda -->
                         <div class="col-lg-3"></div>
                         <!-- fim coluna esquerda -->
-                        
+
                         <!-- inicio coluna meio -->
                         <div class="col-lg-6">
-                        
+
                             <!-- inicio lista -->
                             <div class="list-group">
-                            
-                            <ul>
-                                <li class="list-group-item">
-                                    <span class="label label-default">Descrição</span>
-                                    <c:out value="${rota.descricao}"/>
-                                </li>
-                                
-                                <li class="list-group-item">
-                                    <span class="label label-default">Motorista</span>
-                                    <c:out value="${rota.motorista}"/>
-                                </li>
-                                
-                                <li class="list-group-item">
-                                    <span class="label label-default">Ajudante</span>
-                                    <c:out value="${rota.ajudante}"/>
-                                </li>
-                                
-                                <li class="list-group-item">
-                                    <span class="label label-default">Data Saída</span>
-                                    <fmt:formatDate pattern="dd/MM/yyyy" timeZone="GMT -3" value="${rota.dtSaida}" />
-                                </li>
-                                
-                                <li class="list-group-item">
-                                    <span class="label label-default">Veículo</span>
-                                    <c:out value="${rota.veiculo}"/>
-                                </li>
-                                
-                                <li class="list-group-item">
-                                    <span class="label label-default">Transportador</span>
-                                    <c:out value="${rota.nomeTransp}"/>
-                                </li>
-                                
-                            </ul>
-                           
-                        
-                        </div>
-                        <!-- fim lista -->
-                                
+
+                                <ul>
+                                    <li class="list-group-item">
+                                        <span class="label label-default">Descrição</span>
+                                        <c:out value="${rota.descricao}"/>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <span class="label label-default">Motorista</span>
+                                        <c:out value="${rota.motorista}"/>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <span class="label label-default">Ajudante</span>
+                                        <c:out value="${rota.ajudante}"/>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <span class="label label-default">Data Saída</span>
+                                        <fmt:formatDate pattern="dd/MM/yyyy" timeZone="GMT -3" value="${rota.dtSaida}" />
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <span class="label label-default">Veículo</span>
+                                        <c:out value="${rota.veiculo}"/>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <span class="label label-default">Transportador</span>
+                                        <c:out value="${rota.nomeTransp}"/>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <div class="btn-group btn-group-justified">
+                                            <a href="ver-rota.htm?idTransportador=${rota.idTransportador}" class="btn btn-primary">Ver Carga</a>
+                                        </div>
+                                    </li>
+
+                                </ul>
+
+
+                            </div>
+                            <!-- fim lista -->
+
                         </div>
                         <!-- fim coluna meio -->
-                                
+
                         <!-- inicio coluna direita -->        
                         <div class="col-lg-3"></div>        
                         <!-- fim coluna direita -->
@@ -135,10 +141,10 @@
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
-        (function(b, o, i, l, e, r) {
+        (function (b, o, i, l, e, r) {
             b.GoogleAnalyticsObject = l;
             b[l] || (b[l] =
-                    function() {
+                    function () {
                         (b[l].q = b[l].q || []).push(arguments)
                     });
             b[l].l = +new Date;

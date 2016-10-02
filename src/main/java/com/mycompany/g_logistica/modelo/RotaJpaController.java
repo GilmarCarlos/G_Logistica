@@ -14,6 +14,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
@@ -88,6 +89,20 @@ public class RotaJpaController implements Serializable {
         }
     }
 
+    public List<Rota> findRotaT(Integer idTransportador){
+       EntityManager em = null;
+       try{
+           em = getEntityManager();
+           TypedQuery<Rota> query = em.createQuery("select r from Rota r where r.idTransportador = " + idTransportador, Rota.class);
+           return query.getResultList();
+       }finally {
+            if (em != null) {
+                em.close();
+            }
+        }
+    }
+    
+    
     public List<Rota> findRotaEntities() {
         return findRotaEntities(true, -1, -1);
     }

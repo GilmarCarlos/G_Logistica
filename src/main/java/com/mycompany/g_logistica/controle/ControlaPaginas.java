@@ -6,6 +6,7 @@
 package com.mycompany.g_logistica.controle;
 
 import com.mycompany.g_logistica.modelo.ConsultaData;
+import com.mycompany.g_logistica.modelo.RotaJpaController;
 import com.mycompany.g_logistica.modelo.TransportadorJpaController;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -80,5 +81,11 @@ public class ControlaPaginas {
         model.addAttribute("titulo", "Consulta por Periodo");
         model.addAttribute("rotas", new TransportadorJpaController().findTransportadorPeriodo(data));
         return "rota/proxima";
+    }
+    
+    @RequestMapping(value = "/ver-rota.htm", method = RequestMethod.GET)
+    public String ver_rota(@RequestParam(value = "idTransportador") int idTransportador , Model model) {
+        model.addAttribute("rotas", new RotaJpaController().findRotaT(idTransportador));
+        return "montagem-de-carga/dados-da-carga";
     }
 }

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : info
-    Created on : 04/09/2016, 21:39:16
+    Document   : dados-da-carga.jsp
+    Created on : 02/10/2016, 18:54:04
     Author     : hexp_
 --%>
 
@@ -50,71 +50,54 @@
                 <!-- inicio painel -->
                 <div class="panel panel-default">
 
-                    <div class="panel-heading"><h3 class="panel-title" >Dados da Rota</h3></div>
+                    <div class="panel-heading">
+                        
+                        <h3 class="panel-title" >Dados da Carga</h3>
+                    
+                    </div>
 
                     <!-- inicio corpo painel -->
                     <div class="panel-body">
 
-                        <!-- inicio coluna esquerda -->
-                        <div class="col-lg-3"></div>
-                        <!-- fim coluna esquerda -->
-
-                        <!-- inicio coluna meio -->
-                        <div class="col-lg-6">
-
-                            <!-- inicio lista -->
-                            <div class="list-group">
-
-                                <ul>
-                                    <li class="list-group-item">
-                                        <span class="label label-default">Descrição</span>
-                                        <c:out value="${rota.descricao}"/>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <span class="label label-default">Motorista</span>
-                                        <c:out value="${rota.motorista}"/>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <span class="label label-default">Ajudante</span>
-                                        <c:out value="${rota.ajudante}"/>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <span class="label label-default">Data Saída</span>
-                                        <fmt:formatDate pattern="dd/MM/yyyy" timeZone="GMT -3" value="${rota.dtSaida}" />
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <span class="label label-default">Veículo</span>
-                                        <c:out value="${rota.veiculo}"/>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <span class="label label-default">Transportador</span>
-                                        <c:out value="${rota.nomeTransp}"/>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <div class="btn-group btn-group-justified">
-                                            <a href="ver-rota.htm?idTransportador=${rota.idTransportador}" class="btn btn-primary">Ver Carga</a>
-                                        </div>
-                                    </li>
-
-                                </ul>
-
-
-                            </div>
-                            <!-- fim lista -->
-
+                        <!--inicio div tabela -->
+                        <div class="table-responsive">
+                            
+                            <!-- inicio da tabela -->
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Cidade</th>
+                                        <th>Cliente</th>
+                                        <th>Conferente</th>
+                                        <th>Pedido</th>
+                                        <th>NF-e</th>
+                                        <th>Emissão NF-e</th>
+                                        <th>Volumes</th>                                        
+                                        <th>Valor</th>
+                                    </tr>
+                                </thead>
+                                
+                                <tbody>
+                                    <c:forEach var="rota" items="${rotas}">
+                                    <tr>
+                                        <td>${rota.cidadeUf}</td>
+                                        <td>${rota.cliente}</td>
+                                        <td>${rota.conferente}</td>
+                                        <td>${rota.pedido}</td>
+                                        <td>${rota.danfe}</td>
+                                        <td><fmt:formatDate pattern="dd/MM/yyyy" timeZone="GMT -3" value="${rota.dtEmi}" /></td>
+                                        <td>${rota.qtdVol}</td>
+                                        <td><fmt:formatNumber value="${rota.valor}" type="currency" /></td>
+                                    </tr>
+                                    </c:forEach>
+                                </tbody>
+                                
+                            </table>
+                            <!-- fim da tabela -->
+                        
                         </div>
-                        <!-- fim coluna meio -->
-
-                        <!-- inicio coluna direita -->        
-                        <div class="col-lg-3"></div>        
-                        <!-- fim coluna direita -->
-
+                        <!-- fim div tabela -->
+      
                     </div>
                     <!-- fim corpo painel -->
 
@@ -158,5 +141,3 @@
     </script>
 </body>
 </html>
-
-
